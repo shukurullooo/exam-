@@ -23,23 +23,24 @@ const Movies = () => {
   const { data } = getMovies({
     page,
     with_genres: genre,
-    without_genres: "",//18,36,27,10749
+    without_genres: "18,36,27,10749",
     // "release_date.gte": "01-01-1800",
     // "release_date.lte": "01-01-1890",
   });
 
   return (
-    <div>
+    <div className="">
       <Genre data={genreData?.genres} />
       <MovieView data={data?.results} />
-      <div>
-        <Pagination
-          current={page}
-          onChange={handlePagination}
-          pageSize={20}
-          total={data?.total_results <= 10_000 ? data?.total_results : 10_000}
-        />
-      </div>
+      <div className=" dark: px-4 py-3 rounded shadow flex items-center justify-center">
+    <Pagination
+      current={page}
+      onChange={handlePagination}
+      pageSize={20}
+      total={data?.total_results <= 10_000 ? data?.total_results : 10_000}
+      showSizeChanger={false}
+    />
+  </div>
     </div>
   );
 };
