@@ -20,10 +20,10 @@ const Movies = () => {
   };
 
   const { data: genreData } = getGenres();
-  const { data, isPending, error, isError } = getMovies({
+  const { data } = getMovies({
     page,
     with_genres: genre,
-    without_genres: "18,36,27,10749",
+    without_genres: "",//18,36,27,10749
     // "release_date.gte": "01-01-1800",
     // "release_date.lte": "01-01-1890",
   });
