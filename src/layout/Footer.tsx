@@ -20,14 +20,12 @@ const Footer = () => {
   return (
     <footer className="bg-black dark:bg-gray-900 text-white px-6 md:px-16 py-10 transition-colors duration-300">
       <div className="grid gap-8 md:grid-cols-4">
-        {/* Logo + Store Links */}
         <div className="flex flex-col items-start space-y-4">
           <img src={logo} alt="logo" className="w-24" />
           <img src={googlePlay} alt="Google Play" className="w-32" />
           <img src={appStore} alt="App Store" className="w-32" />
         </div>
 
-        {/* About Us */}
         <div>
           <h3 className="mb-4 font-semibold">About Us</h3>
           <ul className="space-y-2 text-sm">
@@ -81,7 +79,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact & Socials */}
         <div className="space-y-6">
           <div>
             <h3 className="mb-2 font-semibold">Contact Us</h3>
