@@ -2,7 +2,6 @@ import { IMAGE_URL } from "@/const";
 import type { IMovie } from "@/types";
 import React, { type FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { Skeleton } from "antd";
 
 interface Props {
   data: undefined | IMovie[];
