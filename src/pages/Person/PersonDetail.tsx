@@ -6,10 +6,8 @@ import MovieView from "@/components/movie-view/MovieView";
 
 const PersonDetail = () => {
   const { id } = useParams();
-  const { getPersonSingle,getPersonDetail} = usePerson();
-  const { data, isLoading } = getPersonSingle(id || "");
- const { data: qata  } = getPersonDetail(id || "","credits");
- console.log(qata);
+const { getPersonSingle } = usePerson();
+const { data, isLoading } = getPersonSingle(id || "");
  
   return (
     <div className="bg-white dark:bg-[#121212] text-gray-900 dark:text-white transition min-h-screen py-10 px-4">
@@ -76,7 +74,7 @@ const PersonDetail = () => {
       
         </div>
       </div>
-          <MovieView data={qata?.crew?.slice(0, 4)} />
+          <MovieView data={data?.crew?.slice(0, 4)} />
     </div>
   );
 };

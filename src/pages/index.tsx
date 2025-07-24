@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import { useRoutes } from "react-router-dom";
+import Seorch from "./seorch/Seorch";
 
 const Layout = lazy(() => import("./layout/Layout"));
 const Home = lazy(() => import("./home/Home"));
@@ -24,6 +25,10 @@ const MainRouter = () => {
         {
           path: "/movie/:id",
           element: <MovieDetail />,
+        }, 
+         {
+          path: "/seorch",
+          element: <Seorch />,
         }, 
         {
           path: "/personDetail/:id",

@@ -2,19 +2,19 @@ import { useQuery } from "@tanstack/react-query";
 import { api } from "..";
 
 export const usePerson = () => {
-
   const getPersonSingle = (id: string) =>
     useQuery({
       queryKey: ["person", id],
       queryFn: () => api.get(`person/${id}`).then((res) => res.data),
     });
-    const getPersonDetail = (id: string, path: string ) =>
+      const getMovieSingle = (id: string) =>
     useQuery({
-      queryKey: ["person", id ,path],
-      queryFn: () => api.get(`person/${id}/${path}`).then((res) => res.data),
+      queryKey: ["movie", id],
+      queryFn: () => api.get(`person/${id}/movie_credits`).then((res) => res.data),
     });
+
+
     
 
-
-  return { getPersonSingle,getPersonDetail };
+  return {getPersonSingle , getMovieSingle};
 };

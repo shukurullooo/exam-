@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
-import { AiOutlineHome, AiOutlineVideoCamera, AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
+import {
+  AiOutlineHome,
+  AiOutlineVideoCamera,
+  AiOutlineUser,
+  AiOutlineSearch,
+} from "react-icons/ai";
 
 const Header = () => {
   const [dark, setDark] = useState(false);
@@ -32,24 +37,37 @@ const Header = () => {
         </div>
 
         <nav className="space-x-6 hidden md:flex items-center">
-          <NavLink to="/" className="hover:text-red-500 transition flex items-center gap-1">
+          <NavLink
+            to="/"
+            className="hover:text-red-500 transition flex items-center gap-1"
+          >
             <AiOutlineHome size={18} />
             Home
           </NavLink>
-          <NavLink to="/movies" className="hover:text-red-500 transition flex items-center gap-1">
+          <NavLink
+            to="/movies"
+            className="hover:text-red-500 transition flex items-center gap-1"
+          >
             <AiOutlineVideoCamera size={18} />
             Movies
           </NavLink>
-          <NavLink to="/tickets" className="hover:text-red-500 transition flex items-center gap-1">
+          <NavLink
+            to="/tickets"
+            className="hover:text-red-500 transition flex items-center gap-1"
+          >
             <AiOutlineUser size={18} />
             Account
           </NavLink>
-          <NavLink to="/search" className="hover:text-red-500 transition flex items-center gap-1">
+          <NavLink
+            to="/seorch"
+            className="hover:text-red-500 transition flex items-center gap-1"
+          >
             <AiOutlineSearch size={18} />
             Search
           </NavLink>
         </nav>
 
+        {/* O'ng tomondagi elementlar */}
         <div className="flex items-center space-x-4">
           <select className="bg-black text-white border border-white px-2 py-1 rounded text-sm">
             <option value="ru">Ru</option>
@@ -71,25 +89,47 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      <div className={`fixed z-40 bg-black text-white bottom-0 left-0 right-0 transform transition-transform duration-300 md:hidden ${mobileMenu ? "translate-y-0" : "translate-y-full"}`}>
+      <div
+        className={`fixed z-40 bg-black text-white bottom-0 left-0 right-0 transform transition-transform duration-300 md:hidden ${
+          mobileMenu ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
         <div className="flex flex-col items-center py-4 space-y-3">
-          <NavLink to="/" className="hover:text-red-500 transition flex items-center gap-2" onClick={toggleMenu}>
-            <AiOutlineHome /> Home
+          <NavLink
+            to="/"
+            className="hover:text-red-500 transition flex items-center gap-2"
+            onClick={toggleMenu}
+          >
+            <AiOutlineHome />
+            Home
           </NavLink>
-          <NavLink to="/movies" className="hover:text-red-500 transition flex items-center gap-2" onClick={toggleMenu}>
-            <AiOutlineVideoCamera /> Movies
+          <NavLink
+            to="/movies"
+            className="hover:text-red-500 transition flex items-center gap-2"
+            onClick={toggleMenu}
+          >
+            <AiOutlineVideoCamera />
+            Movies
           </NavLink>
-          <NavLink to="/tickets" className="hover:text-red-500 transition flex items-center gap-2" onClick={toggleMenu}>
-            <AiOutlineUser /> Account
+          <NavLink
+            to="/tickets"
+            className="hover:text-red-500 transition flex items-center gap-2"
+            onClick={toggleMenu}
+          >
+            <AiOutlineUser />
+            Account
           </NavLink>
-          <NavLink to="/search" className="hover:text-red-500 transition flex items-center gap-2" onClick={toggleMenu}>
-            <AiOutlineSearch /> Search
+          <NavLink
+            to="/seorch"
+            className="hover:text-red-500 transition flex items-center gap-2"
+            onClick={toggleMenu}
+          >
+            <AiOutlineSearch />
+            Search
           </NavLink>
         </div>
       </div>
 
-      {/* Bo'sh joy header balandligi uchun */}
       <div className="h-[60px] md:h-[64px]" />
     </>
   );
